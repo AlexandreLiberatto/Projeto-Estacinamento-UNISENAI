@@ -1,42 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estacinamento UNISENAI</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estacionamento</title>
+    <link rel="stylesheet" href="style.css">  
 </head>
 <body>
-    <div><!-- Início da div pincipal -->
-
-        <div>
-            <input type="text" id="modelo" placeholder="Digite o modelo do veículo">
-            <input type="text" id="placa" placeholder="Digite a placa do veículo">
-            <input type="text" id="cor" placeholder="Digite a cor do veículo">
-            <input type="text" id="proprietario" placeholder="Digite o nome do proprietário">
-            <input type="text" id="apartamento" placeholder="Digite o número do apartamento">
-            <input type="text" id="bloco" placeholder="Digite o bloco dd apartamento">
-            <input type="text" id="vaga" placeholder="Digite o número da vaga de estacionamento">
-            <button id="reg">Registrar</button>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Veículo</th>
-                    <th>Placa</th>
-                    <th>Cor</th>
-                    <th>Proprietário</th>
-                    <th>Apartamento</th>
-                    <th>Bloco</th>
-                    <th>Vaga</th>
-                    <th>Horário</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="garage"></tbody>
-        </table>
-
-
-    </div><!-- Fim da div pincipal -->
+    <div>
+        <input type="text" id="name" placeholder="Nome do veículo" autocomplete="off">
+        <input type="text" id="licence" placeholder="Placa do veículo" autocomplete="off">
+        <input type="text" id="owner" placeholder="Nome do proprietário" autocomplete="off">
+        <input type="text" id="apartment" placeholder="Número do apartamento" autocomplete="off">
+        <input type="text" id="block" placeholder="Bloco do apartamento" autocomplete="off">
+        <input type="text" id="color" placeholder="Cor do veículo" autocomplete="off">
+        <input type="text" id="parking" placeholder="Número da vaga de estacionamento" autocomplete="off">
+        <button id="send" class="success">Registrar</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Veículo</th>
+                <th>Placa</th>
+                <th>Entrada</th>
+                <th>Proprietário</th>
+                <th>Apartamento</th>
+                <th>Bloco</th>
+                <th>Cor</th>
+                <th>Número da Vaga</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="garage"></tbody>
+    </table>
 </body>
+
+<script src="main.js"></script>
 </html>
