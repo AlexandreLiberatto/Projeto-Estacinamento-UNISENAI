@@ -1,55 +1,85 @@
-* {
+/* :root{} cria variáveis de cor */
+:root{
+    --color-white: #fff;
+    --color-red: #e63636;
+    --color-dark1: #181818;
+    --color-dark2: #lelele;
+    --color-purple1: #9333ff;
+    --color-purple2: indigo;
+}   /*Para chamar essas variavéis usa o var()*/
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
-
-body {
-    width: 50%;
-    margin: 2rem auto;
+body{
+    font-family: Arial, Helvetica, sans-serif; /*tipo de fonte em tudo que está no body*/
+    background-color: var(--color-dark1);
+    color: var(--color-white); /*Cor das letras*/
+    display: flex; /*display: flex; serve para usar os itens de baixo e poder alinhar o texto etc...*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-
-div {
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: #eee;
-    padding: 0.7rem;
+.content{
+    background-color: var(--color-dark2);
+    padding: 2rem; /* padding é o espaço entre o texto e as bordas. 1 rem equivale 16px*/
+    border-radius: 10px;
+    min-width: 60%; /* minimo de largura 80% (width é a largura)*/
+    overflow: auto; /*Possibilita rolar a tela para cima e para baixo. "auto" para aplicar quando for preciso*/
 }
-
-input, button {
-    width: 98%;
-    padding: 0.6rem 0.4rem;
-    margin: 0.4rem;
-}
-
-button {
-    text-decoration: none;
-    border: none;
-    display: block;
-    cursor: pointer;
+h1{
+    margin-bottom: 1rem; /* Dá um espaço entre o titulo e o texto*/
     text-align: center;
 }
-
-.success {
-    background-color: rgb(54, 80, 231);
-    color: rgb(255, 255, 255);
+.content form{
+    display: flex; /*Por padrão deixa o texto um do lado do outro. flex deixa os elementos flexiveis(pode alterar várias coisas)*/
+    flex-direction: column; /* Diração em coluna (vertical)*/
+    gap: 1rem; /*Espaço entre os itens de texto*/
 }
-
-.delete {
-    background-color: rgb(231, 54, 54);
-    color: rgb(255, 255, 255);
+.span-required{
+    display: none; /* Esconde os spans*/
+    font-size: 12px;
+    margin: 3px 0 0 1px;
+    color: var(--color-red);
 }
-
-
-table {
-    background-color: #eee;
-    margin-top: .9rem;
-    border-collapse: collapse;
-    width: 100%;
+.inputs{
+    padding: 8px 5px; /*Ajusta o texto dentro da caixa de input*/
+    outline: none;/*Quando passa o mouse na caixa não aparece a linha em azul*/
+    border-radius: 5px; /*Arredonda as bordas da caixa*/
+    background-color: var(--color-dark1);
+    color: var(--color-white); /*Cor do texto*/
+    width: 100%; /*Espaço entre o texto e caixa (conteiner)*/
+    box-sizing: border-box; /*Ajusta a distancia igualmente dos atributos acima, margin, padding etc..*/ 
+    transition: .3s; /*Tempo de transição para mudar a cor da caixa quando clica*/
 }
-
-th, td {
-    padding: 5px 25px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.inputs:focus{ /*Foca no inputs*/
+    border-color: var(--color-purple1); /*Muda a cor da borda*/
 }
+.box-select{
+    display: flex; /*Deixa os elementos um do lado do outro*/
+    justify-content: space-evenly; /*Espalha os elementos e deixa a distancia entre eles igual*/
+    font-weight: bold; /*Deixa o texto em negrito*/
+    gap: 1rem; /*Espaço entre os elementos*/
+}
+button[type="submit"]{ /*Chama todos os botoes do tipo submit*/
+    padding: 1rem; 
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
+    background-color: var(--color-purple2);
+    color: var(--color-white); /*Cor do texto*/
+    cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
+    transition: .3s; /*Tempo de transição para mudar a cor da caixa quando clica*/
+}
+button[type="submit"]:hover{ /*Quando passar o mouse muda a cor de fundo*/
+    background-color: var(--color-purple1);
+}
+  /* "RESPONSIVIDADE" o formulário se ajusta conforme o tamanho da tela do usuário */
+  @media screen and (max-width: 536px) {
+    .box-select{
+        flex-direction: column; /*Quando diminuir o tamanho da tela os elementos serão alinhdos verticalmente*/
+        gap: 5px; /*Quando diminuir a tela o espaço vai de apenas 5px*/
+    } /*Essas alterações são possíveis porque lá encima utilizamos o "display: flex;" no .box-select*/
+  }
