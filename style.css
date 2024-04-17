@@ -1,85 +1,95 @@
-/* :root{} cria variáveis de cor */
-:root{
-    --color-white: #fff;
-    --color-red: #e63636;
-    --color-dark1: #181818;
-    --color-dark2: #lelele;
-    --color-purple1: #9333ff;
-    --color-purple2: indigo;
-}   /*Para chamar essas variavéis usa o var()*/
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
-    font-family: Arial, Helvetica, sans-serif; /*tipo de fonte em tudo que está no body*/
-    background-color: var(--color-dark1);
-    color: var(--color-white); /*Cor das letras*/
-    display: flex; /*display: flex; serve para usar os itens de baixo e poder alinhar o texto etc...*/
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+body {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    background: #fff;
 }
-.content{
-    background-color: var(--color-dark2);
-    padding: 2rem; /* padding é o espaço entre o texto e as bordas. 1 rem equivale 16px*/
-    border-radius: 10px;
-    min-width: 60%; /* minimo de largura 80% (width é a largura)*/
-    overflow: auto; /*Possibilita rolar a tela para cima e para baixo. "auto" para aplicar quando for preciso*/
-}
+
 h1{
-    margin-bottom: 1rem; /* Dá um espaço entre o titulo e o texto*/
+    margin-top: 1em; 
     text-align: center;
+    border-bottom-style: inset; /* Faz uma linha em baixo do h1*/
+    border-color: white;
 }
-.content form{
-    display: flex; /*Por padrão deixa o texto um do lado do outro. flex deixa os elementos flexiveis(pode alterar várias coisas)*/
-    flex-direction: column; /* Diração em coluna (vertical)*/
-    gap: 1rem; /*Espaço entre os itens de texto*/
+
+#conteudo {
+    background-color: rgb(104, 100, 93);
+    width: 850px;
+    margin: auto;
+    min-height: 650px;
+    box-shadow: black 3px 3px 0 0;
 }
-.span-required{
-    display: none; /* Esconde os spans*/
-    font-size: 12px;
-    margin: 3px 0 0 1px;
-    color: var(--color-red);
+
+#formulario {
+    width: 200px;
+    float: left;
+    margin: 10px 0;
+    padding: 20px;
+    font: bold;
+   
 }
-.inputs{
-    padding: 8px 5px; /*Ajusta o texto dentro da caixa de input*/
-    outline: none;/*Quando passa o mouse na caixa não aparece a linha em azul*/
-    border-radius: 5px; /*Arredonda as bordas da caixa*/
-    background-color: var(--color-dark1);
-    color: var(--color-white); /*Cor do texto*/
-    width: 100%; /*Espaço entre o texto e caixa (conteiner)*/
-    box-sizing: border-box; /*Ajusta a distancia igualmente dos atributos acima, margin, padding etc..*/ 
-    transition: .3s; /*Tempo de transição para mudar a cor da caixa quando clica*/
+
+#formulario #form input {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 1.8em;
 }
-.inputs:focus{ /*Foca no inputs*/
-    border-color: var(--color-purple1); /*Muda a cor da borda*/
+
+#formulario #form input:hover {
+    background-color: black;
+    color: #fff;
+    border-bottom: red solid 2px;
 }
-.box-select{
-    display: flex; /*Deixa os elementos um do lado do outro*/
-    justify-content: space-evenly; /*Espalha os elementos e deixa a distancia entre eles igual*/
-    font-weight: bold; /*Deixa o texto em negrito*/
-    gap: 1rem; /*Espaço entre os elementos*/
-}
-button[type="submit"]{ /*Chama todos os botoes do tipo submit*/
+
+#formulario #form button {
     padding: 1rem; 
     font-size: 1rem;
     outline: none;
     border: none;
     border-radius: 5px;
     margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
-    background-color: var(--color-purple2);
-    color: var(--color-white); /*Cor do texto*/
+    background-color: rgb(21, 224, 21);
+    color: black;
+    font: bold;
     cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
-    transition: .3s; /*Tempo de transição para mudar a cor da caixa quando clica*/
+    transition: .3s; 
 }
-button[type="submit"]:hover{ /*Quando passar o mouse muda a cor de fundo*/
-    background-color: var(--color-purple1);
+
+#formulario #form button:hover {
+    background-color: black;
+    color: #fff;
+    border-bottom: red solid 2px;
 }
-  /* "RESPONSIVIDADE" o formulário se ajusta conforme o tamanho da tela do usuário */
-  @media screen and (max-width: 536px) {
-    .box-select{
-        flex-direction: column; /*Quando diminuir o tamanho da tela os elementos serão alinhdos verticalmente*/
-        gap: 5px; /*Quando diminuir a tela o espaço vai de apenas 5px*/
-    } /*Essas alterações são possíveis porque lá encima utilizamos o "display: flex;" no .box-select*/
-  }
+
+#tab {
+    float: right;
+    width: auto;
+}
+
+#tab #tabela {
+    border: black solid 2px;
+    margin: 20px 10px 0 0;
+    text-align: center;
+    width: 600px;
+}
+
+tabela {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 2px black;
+    text-align: left;
+    padding: 8px;
+}
+
+
+
+tr:hover {
+    background-color: black;
+    color: #fff;
+}
