@@ -15,6 +15,10 @@ frm.addEventListener("submit", (e) => {
     const bloco = frm.bloco.value;
     const vaga = Number(frm.vaga.value);
 
+    if (vaga <= 0 || vaga > 30) {
+        alert("Digite um número de 01 à 30...");
+    };
+
     const carro = { modelo, placa, cor, proprietario, apartamento, bloco, vaga };
     carros.push(carro);
 
@@ -25,7 +29,7 @@ frm.addEventListener("submit", (e) => {
     apartamento == 0 || bloco == " " || vaga == 0) {
       alert("Preencha os campo corretamente!")
     } else {
-        alert("Cadastro realizado com sucesso")
+        alert("Cadastro realizado com sucesso!")
     }
 });
 
