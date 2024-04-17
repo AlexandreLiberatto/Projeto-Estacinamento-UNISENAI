@@ -93,3 +93,29 @@ tr:hover {
     background-color: black;
     color: #fff;
 }
+
+/* ******estilização da pagina vagas***** */
+#conteudo2 {
+    background-color: rgb(104, 100, 93);
+    width: 850px;
+    margin: auto;
+    min-height: 650px;
+    box-shadow: black 3px 3px 0 0;
+    display: inline;
+}
+
+
+#cont-1 {
+    float: left;
+    margin-top: 10px;
+}
+
+#cont-2 {
+    float: center;
+    margin-top: 10px;
+}
+
+#cont-3 {
+    float: right;
+    margin-top: 10px;
+}
