@@ -1,9 +1,12 @@
+// Selecionando o formulário de registro de carros
+const frm = document.querySelector("#form");
 
-const frm = document.querySelector("form");
+// Selecionando a tabela para atualizar
 const tabela = document.getElementById("tabela");
 
 let carros = [];
 
+// Adicionando um ouvinte de evento para o formulário de registro de carros
 frm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -22,8 +25,12 @@ frm.addEventListener("submit", (e) => {
     const carro = { modelo, placa, cor, proprietario, apartamento, bloco, vaga };
     carros.push(carro);
 
+    // Armazenar os dados do formulário no sessionStorage
+    sessionStorage.setItem('carro', JSON.stringify(carro));
+
     frm.reset();
     atualizarTabela();
+    alterarLi(vaga);
 
     if (modelo == " " || placa == " " || cor == " " || proprietario == " " ||
     apartamento == 0 || bloco == " " || vaga == 0) {
@@ -33,8 +40,9 @@ frm.addEventListener("submit", (e) => {
     }
 });
 
+// Função para atualizar a tabela de carros
 function atualizarTabela() {
-    tabela.innerHTML = `
+    let tabelaHTML = `
         <tr>
             <th>Modelo</th>
             <th>Placa</th>
@@ -47,7 +55,7 @@ function atualizarTabela() {
     `;
     
     carros.forEach(carro => {
-        tabela.innerHTML += `
+        tabelaHTML += `
             <tr>
                 <td>${carro.modelo}</td>
                 <td>${carro.placa}</td>
@@ -59,4 +67,51 @@ function atualizarTabela() {
             </tr>
         `;
     });
+
+    // Armazenar os dados da tabela no localStorage
+    localStorage.setItem('tabela', tabelaHTML);
+
+    tabela.innerHTML = tabelaHTML;
 }
+
+// Função para alterar o elemento <li> com base no número da vaga
+function alterarLi(numero) {
+    var li = document.getElementById('vg' + numero);
+    if (li) {
+        li.textContent = 'Vaga Ocupada ' + numero;
+        li.style.backgroundColor = 'red';
+    } else {
+        // Tenta novamente após 500ms
+        setTimeout(() => alterarLi(numero), 500);
+    }
+}
+
+
+// Adicionando um ouvinte de evento para o evento DOMContentLoaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Recuperar os dados do formulário do sessionStorage
+    const carro = JSON.parse(sessionStorage.getItem('carro'));
+
+    if (carro) {
+        document.getElementById('modelo').value = carro.modelo;
+        document.getElementById('placa').value = carro.placa;
+        document.getElementById('cor').value = carro.cor;
+        document.getElementById('proprietario').value = carro.proprietario;
+        document.getElementById('apartamento').value = carro.apartamento;
+        document.getElementById('bloco').value = carro.bloco;
+        document.getElementById('vaga').value = carro.vaga;
+    }
+
+    // Recuperar os dados da tabela do localStorage
+    const tabelaHTML = localStorage.getItem('tabela');
+
+    if (tabelaHTML) {
+        tabela.innerHTML = tabelaHTML;
+    }
+
+    let vagasOcupadas = JSON.parse(localStorage.getItem("vagasOcupadas")) || [];
+
+    vagasOcupadas.forEach(vaga => {
+        alterarLi(vaga);
+    });
+});

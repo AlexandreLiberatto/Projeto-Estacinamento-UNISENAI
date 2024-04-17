@@ -49,10 +49,10 @@ h1{
     padding: 1rem; 
     font-size: 1rem;
     outline: none;
-    border: none;
+    border: black solid 1px;
     border-radius: 5px;
     margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
-    background-color: rgb(21, 224, 21);
+    background-color: yellow;
     color: black;
     font-weight: bold;
     cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
@@ -126,7 +126,7 @@ tr:hover {
     padding: 13px 5px;
     margin-bottom: 5px;
    border: black solid 2px;
-   background-color: #fff;
+   background-color: rgb(51, 226, 28);
    font-weight: bold;
 }
 
@@ -134,10 +134,10 @@ a button {
     padding: 1rem; 
     font-size: 1rem;
     outline: none;
-    border: none;
+    border: black solid 1px;
     border-radius: 5px;
     margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
-    background-color: rgb(21, 224, 21);
+    background-color: yellow;
     color: black;
     font-weight: bold;
     cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
@@ -150,5 +150,6 @@ a button:hover {
     border-bottom: red solid 2px;
     cursor: pointer;
 }
+
 
 
