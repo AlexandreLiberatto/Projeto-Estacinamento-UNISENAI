@@ -53,7 +53,7 @@ h1{
     margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
     background-color: rgb(21, 224, 21);
     color: black;
-    font: bold;
+    font-weight: bold;
     cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
     transition: .3s; 
 }
@@ -100,22 +100,30 @@ tr:hover {
     width: 850px;
     margin: auto;
     min-height: 650px;
+    padding: 20px;
     box-shadow: black 3px 3px 0 0;
-    display: inline;
+    clear: both;
 }
 
 
-#cont-1 {
-    float: left;
-    margin-top: 10px;
+#conteudo2 .box {
+    display: inline-block;
+    width: 260px;
+    color: black;
+    margin: 20px 10px; /* Espaçamento entre as divs */
 }
 
-#cont-2 {
-    float: center;
-    margin-top: 10px;
+#conteudo2 #container {
+    white-space: nowrap; /* Evita que as divs quebrem linha */
 }
 
-#cont-3 {
-    float: right;
-    margin-top: 10px;
+#conteudo2 .box ul li {
+    list-style-type: none;
+    text-align: center;
+    padding: 13px 5px;
+    margin-bottom: 5px;
+   border: black solid 2px;
+   background-color: #fff;
+   font-weight: bold;
 }
+
