@@ -127,3 +127,24 @@ tr:hover {
    font-weight: bold;
 }
 
+a button {
+    padding: 1rem; 
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
+    background-color: rgb(21, 224, 21);
+    color: black;
+    font-weight: bold;
+    cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
+    transition: .3s; 
+}
+
+a button:hover {
+    background-color: black;
+    color: #fff;
+    border-bottom: red solid 2px;
+}
+
+

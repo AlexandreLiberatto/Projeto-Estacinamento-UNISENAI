@@ -20,6 +20,13 @@ frm.addEventListener("submit", (e) => {
 
     frm.reset();
     atualizarTabela();
+
+    if (modelo == " " || placa == " " || cor == " " || proprietario == " " ||
+    apartamento == 0 || bloco == " " || vaga == 0) {
+      alert("Preencha os campo corretamente!")
+    } else {
+        alert("Cadastro realizado com sucesso")
+    }
 });
 
 function atualizarTabela() {
