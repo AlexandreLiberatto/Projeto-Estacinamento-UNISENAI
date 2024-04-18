@@ -157,7 +157,7 @@ a button:hover {
     outline: none;
     border: black solid 1px;
     border-radius: 5px;
-    margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
+    margin-top: 2px; /*Dá um espaço entre o botão e texto acima*/
     margin-left: auto;
     background-color: yellow;
     color: black;
@@ -175,4 +175,26 @@ a button:hover {
 
 #conteudo2 .container #menu {
     float: inline-start;
+}
+
+#conteudo2 #resetarHistorico {
+    padding: 1rem; 
+    font-size: 1rem;
+    outline: none;
+    border: black solid 1px;
+    border-radius: 5px;
+    margin-top: 2px; /*Dá um espaço entre o botão e texto acima*/
+    margin-left: auto;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
+    transition: .3s; 
+}
+
+#conteudo2 #resetarHistorico:hover {
+    background-color: black;
+    color: #fff;
+    border-bottom: red solid 2px;
+    cursor: pointer;
 }
