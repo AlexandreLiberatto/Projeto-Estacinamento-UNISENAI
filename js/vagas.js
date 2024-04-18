@@ -27,3 +27,15 @@ frm.addEventListener("submit", (e) => {
     e.preventDefault();
     verificarVagasDisponiveis();
 });
+
+// Adicionando um ouvinte de evento para o evento DOMContentLoaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Adicionar evento de clique ao botão de resetar histórico
+    document.getElementById('resetarHistorico').addEventListener('click', resetLocalStorage);
+});
+
+// Função para limpar o histórico no localStorage
+function resetLocalStorage() {
+    localStorage.removeItem('vagasOcupadas');
+    alert('Histórico de vagas ocupadas resetado com sucesso!');
+}
