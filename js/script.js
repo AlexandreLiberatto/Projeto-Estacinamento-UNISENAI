@@ -20,6 +20,7 @@ frm.addEventListener("submit", (e) => {
 
     if (vaga <= 0 || vaga > 30) {
         alert("Digite um número de 01 à 30...");
+        return
     };
 
     const carro = { modelo, placa, cor, proprietario, apartamento, bloco, vaga };

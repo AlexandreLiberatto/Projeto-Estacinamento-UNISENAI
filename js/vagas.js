@@ -2,7 +2,7 @@
 function alterarLi(numero) {
     var li = document.getElementById('vg' + numero);
     if (li) {
-        li.textContent = 'Vaga Ocupada ' + numero;
+        li.textContent = `Vaga ${numero} Ocupada`;
         li.style.backgroundColor = 'red';
     } else {
         // Tenta novamente após 500ms
