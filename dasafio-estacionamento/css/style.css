@@ -151,5 +151,28 @@ a button:hover {
     cursor: pointer;
 }
 
+#conteudo2 #form2 button {
+    padding: 1rem; 
+    font-size: 1rem;
+    outline: none;
+    border: black solid 1px;
+    border-radius: 5px;
+    margin-top: 1rem; /*Dá um espaço entre o botão e texto acima*/
+    margin-left: auto;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    cursor: pointer; /*Quando passa o mouse em cima muda a seta para uma mãozinha*/
+    transition: .3s; 
+}
 
+#conteudo2 #form2 button:hover {
+    background-color: black;
+    color: #fff;
+    border-bottom: red solid 2px;
+    cursor: pointer;
+}
 
+#conteudo2 .container #menu {
+    float: inline-start;
+}

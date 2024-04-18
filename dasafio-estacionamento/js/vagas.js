@@ -10,11 +10,20 @@ function alterarLi(numero) {
     }
 }
 
-// Adicionando um ouvinte de evento para o evento DOMContentLoaded
-document.addEventListener("DOMContentLoaded", function() {
+function verificarVagasDisponiveis() {
     let vagasOcupadas = JSON.parse(localStorage.getItem("vagasOcupadas")) || [];
+    console.log("Vagas ocupadas:", vagasOcupadas);
 
     vagasOcupadas.forEach(vaga => {
+        console.log("Alterando vaga:", vaga);
         alterarLi(vaga);
     });
+}
+
+// Adicionando um ouvinte de evento para o formulário
+const frm = document.getElementById("form2");
+
+frm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    verificarVagasDisponiveis();
 });

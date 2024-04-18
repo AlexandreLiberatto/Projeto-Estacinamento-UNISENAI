@@ -30,7 +30,10 @@ frm.addEventListener("submit", (e) => {
 
     frm.reset();
     atualizarTabela();
-    localStorage.setItem('vagaOcupada', vaga); // Armazena a vaga ocupada
+
+    let vagasOcupadas = JSON.parse(localStorage.getItem('vagasOcupadas')) || [];
+    vagasOcupadas.push(vaga);
+    localStorage.setItem('vagasOcupadas', JSON.stringify(vagasOcupadas));
 
     if (modelo == " " || placa == " " || cor == " " || proprietario == " " ||
     apartamento == 0 || bloco == " " || vaga == 0) {
@@ -39,6 +42,7 @@ frm.addEventListener("submit", (e) => {
         alert("Cadastro realizado com sucesso!")
     }
 });
+
 
 // Função para atualizar a tabela de carros
 function atualizarTabela() {
