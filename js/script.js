@@ -101,3 +101,27 @@ document.addEventListener("DOMContentLoaded", function() {
         tabela.innerHTML = tabelaHTML;
     }
 });
+
+// Função para limpar o histórico no localStorage e a tabela de carros
+function resetLocalStorage() {
+    localStorage.removeItem('historico');
+    localStorage.removeItem('tabela');
+    alert('Histórico resetado com sucesso!');
+    limparTabela();
+}
+
+// Função para limpar a tabela de carros na página
+function limparTabela() {
+    carros = [];
+    atualizarTabela();
+}
+
+// Adicionar evento de clique ao botão de reset
+document.getElementById('resetar').addEventListener('click', function() {
+    resetLocalStorage();
+});
+
+// Adicionar evento de clique ao botão de reset na tabela
+document.getElementById('resetar-tabela').addEventListener('click', function() {
+    limparTabela();
+});
